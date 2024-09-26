@@ -31,11 +31,14 @@ wget https://github.com/protocolbuffers/protobuf/releases/download/v26.1/protoc-
 	source ~/.bashrc
 	protoc --version
 
+git clone --depth=1 https://github.com/googleapis/googleapis.git ~/.local/googleapis
+
 #https://grpc.io/docs/languages/go/quickstart/
 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
-
 go install github.com/google/gnostic/cmd/protoc-gen-openapi@latest
 
+go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
+go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest
 export PATH="$PATH:$(go env GOPATH)/bin"
 ```
