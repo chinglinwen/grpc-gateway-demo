@@ -24,6 +24,8 @@ func main() {
 	log := grpclog.NewLoggerV2(os.Stdout, ioutil.Discard, ioutil.Discard)
 	grpclog.SetLoggerV2(log)
 
+	log.Info("Starting server...")
+
 	lis, err := net.Listen("tcp", *grpcAddr)
 	if err != nil {
 		log.Fatalf("failed to listen, err: %v", err)
